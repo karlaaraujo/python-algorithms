@@ -30,19 +30,15 @@ def obterSaldoFormatado():
 
 def mostrarMenuInicial():
     operacao = int(input(menu))
-
     realizarOperacao(operacao)
 
 def sacar():
     valorSaque = float(input("Informe o valor do saque: R$ ").replace(',','.'))
 
     global saldo
-
     if saldo >= valorSaque:
-
         saldo-= valorSaque
         print(f"Saque realizado com sucesso. Saldo atual: R$ {obterSaldoFormatado()}")
-    
     else:
         print("O saldo atual é menor que o valor de saque informado.")
 
@@ -51,7 +47,6 @@ def sacar():
 
 def consultarSaldo():
     print(f"\n Saldo atual: R$ {obterSaldoFormatado()}")
-
     time.sleep(1.5)
     mostrarMenuInicial()
 
@@ -60,10 +55,8 @@ def depositar():
     global saldo
 
     valorDeposito = float(input("Informe o valor de depósito: R$ ").replace(',','.'))
-
     if valorDeposito > 0.01:
         saldo += valorDeposito
-
         print(f"Depósito realizado com sucesso. Saldo atual: R$ {obterSaldoFormatado()}")
     else:
         print(f"Valor informado inválido para depósito.")
