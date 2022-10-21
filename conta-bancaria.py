@@ -61,9 +61,12 @@ def depositar():
 
     valorDeposito = float(input("Informe o valor de depósito: R$ ").replace(',','.'))
 
-    saldo += valorDeposito
+    if valorDeposito > 0.01:
+        saldo += valorDeposito
 
-    print(f"Depósito realizado com sucesso. Saldo atual: R$ {obterSaldoFormatado()}")
+        print(f"Depósito realizado com sucesso. Saldo atual: R$ {obterSaldoFormatado()}")
+    else:
+        print(f"Valor informado inválido para depósito.")
 
     time.sleep(1.5)
     mostrarMenuInicial()
